@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLSK Book shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+
+</head>
+<body>
+    
+    <section id="header">
+
+        <div id="logo">
+        YOUR ONLINE BOOK SHOP
+        </div>
+
+    
+
+    <div>
+        <ul id="navbar">
+            <li><a  href="index.html">Home</a></li>
+            <li><a class="active" href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="laugage-bag"><a href="search.html"><i class='bx bxs-search-alt-2' ></i></a></li>
+            <li id="laugage-bag"><a href="cart.html"><i class='bx bx-cart'></i></a></li>
+        </ul>
+    </div>
+    <div id="mobile">
+<i id="bar" class="fas fa-outdent"></i>
+
+    </div>
+   </section>
+
+<section id="Page-header">
+<h2>BIGGEST LIBRARY</h2>
+<p>Save more with coupons & upto 70% off</p>
+</section>
+<section id="product1">
+
+ <div class="pro-container"> 
+<div class="pro"> 
+    <img src="5 Emotionally Intelligent Habits For Handling Frustration At Work - TechTello.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Master your Emotions</span>
+        <h5>By Thibaut Meurisse</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>           
+<div class="pro"> 
+    <img src="Everything Is F_cked _ A Book about Hope (Paperback) - Walmart_com.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Everything is fucked up</span>
+        <h5>By Mark Manson</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>           
+<div class="pro"> 
+    <img src="Book Feature - The Good Lie by A_R. Torre - Book Review - Hasty Book List" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Good Lie</span>
+        <h5>By A.R. Torre</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>         
+  <div class="pro"> 
+    <img src="How Did Reading and Writing Evolve_ Neuroscience Gives A Clue.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Brain Matters</span>
+        <h5>By Margie Meacham</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>           
+        
+  <div class="pro"> 
+    <img src="How To Learn Anything In 6 Steps - 4Tests_com.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Art of Learning</span>
+        <h5>By Josh Waitzkin</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>           
+<div class="pro"> 
+    <img src="Old Money Style _ Secrets to Dressing Well for Less (The Gentleman's Edition) - 9781950118052.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Old Money Style</span>
+        <h5>By Byron Tully</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>           
+        
+  <div class="pro"> 
+    <img src="Speak Like a CEO_ Secrets for Commanding Attention and Getting Results (Mcgraw Hill Education Business Classics).jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Speak like a CEO</span>
+        <h5>By Suzanne Bates</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>     
+<div class="pro"> 
+    <img src="The 7 Best Sports Psychology Books.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Think like a Worrior</span>
+        <h5>By Darrin Donnelly</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>   
+<div class="pro"> 
+    <img src="The Best Personal Finance Books that Must Be on Your Bookshelf!.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Your Money or your Life</span>
+        <h5>By Vicki Robin</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>
+<div class="pro"> 
+    <img src="30 Must-Read Books of 2023.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>A Little Life</span>
+        <h5>By Hanya Yanagihara</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div> 
+<div class="pro"> 
+    <img src="The Gilded Ones.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Gilded Ones</span>
+        <h5>By Namina Forna</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>     
+<div class="pro"> 
+    <img src="The Queen Within_ Becoming the Woman God Intended (1).jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Queen Within</span>
+        <h5>By Laureen D. Pitts</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <a href="#"><i class='bx bx-cart' ></i></a>
+</div>                                  
+ </div>
+</div>
+<section id="pagination" class="section-p1">
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+
+</section>
+
+ </section>
+ <section id="newsletter">
+    <div class="newstext">
+        <h4>Sign up for Newsletter</h4>
+        <p>Get E-mail updates about our shop and <span>special offers.</span> </p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Your e-mail Address">
+        <button>Sign up</button>
+    </div>
+ </section>
+ <footer>
+    <div class="col">
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 4286 Thika SuperHighway, RUIRU</p>
+        <p><strong>Phone: </strong>+254 748409818</p>
+        <p><strong>Hours: </strong>08:00hrs-18:00hrs, SUN-FRI</p>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+            <i class='bx bxl-facebook'></i>
+             <i class='bx bxl-twitter'></i>
+             <i class='bx bxl-instagram-alt' ></i>
+             <i class='bx bxl-linkedin' ></i>
+             <i class='bx bxl-pinterest' ></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Deivery Information</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+    </div>
+    <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign in</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+            <img src="app.jpg" alt="">
+            <img src="play.jpg" alt="">
+        </div>
+<p>Secured payment Gateways</p>
+<img src="pay.png" alt="">
+    </div>
+    <div class="copyright">
+        <p>©2023, SLSK designs E-commerce Bookshop</p>
+    </div>
+ </footer>
+
+</body>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+
+<script src="javascript.js"></script>
+</html>

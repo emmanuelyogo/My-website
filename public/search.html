@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLSK Book shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+
+</head>
+<body>
+    
+    <section id="header">
+
+        <div id="logo">
+        YOUR ONLINE BOOK SHOP
+        </div>
+
+    
+
+    <div>
+        <ul id="navbar">
+            <li><a  href="index.html">Home</a></li>
+            <li><a  href="shop.html">Shop</a></li>
+            <li><a  href="blog.html">Blog</a></li>
+            <li><a  href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="laugage-bag"><a href="search.html"><i class='bx bxs-search-alt-2' ></i></a></li>
+            <li id="laugage-bag"><a  class="active"  href="cart.html"><i class='bx bx-cart'></i></a></li>
+           
+        </ul>
+    </div>
+    <div id="mobile">
+<i id="bar" class="fas fa-outdent"></i>
+
+    </div>
+   </section>
+   <section class="container">
+        <form>
+            <i class='bx bx-search-alt-2'></i>
+            <input type="text" name="" id="search book" placeholder="search products">
+        </form>
+        <div class="product-list">
+            <div class="product">
+                <img src="The Gilded Ones.jpg" alt="">
+                <div class="p-details">
+                    <h2>The Gilded Ones</h2>
+                    <h3>KSH 120</h3>
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product">
+                <img src="Old Money Style _ Secrets to Dressing Well for Less (The Gentleman's Edition) - 9781950118052.jpg" alt="">
+                <div class="p-details">
+                    <h2>Old money style</h2>
+                    <h3>KSH 120</h3>
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product">
+                <img src="How Did Reading and Writing Evolve_ Neuroscience Gives A Clue.jpg" alt="">
+                <div class="p-details">
+                    <h2>Brain Matters</h2>
+                    <h3>KSH 120</h3>
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product">
+                <img src="Speak Like a CEO_ Secrets for Commanding Attention and Getting Results (Mcgraw Hill Education Business Classics).jpg" alt="">
+                <div class="p-details">
+                    <h2>Speak lie a CEO</h2>
+                    <h3>KSH 120</h3>
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product">
+                <img src="Everything Is F_cked _ A Book about Hope (Paperback) - Walmart_com.jpg" alt="">
+                <div class="p-details">
+                    <h2>Everything is Fucked</h2>
+                    <h3>KSH 120</h3>
+                </div>
+            </div>
+        </div>
+        <div class="product-list">
+            <div class="product">
+                <img src="The Queen Within_ Becoming the Woman God Intended (1).jpg" alt="">
+                <div class="p-details">
+                    <h2>The Queen Within</h2>
+                    <h3>KSH 120</h3>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+ <footer>
+    <div class="col">
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 4286 Thika SuperHighway, RUIRU</p>
+        <p><strong>Phone: </strong>+254 748409818</p>
+        <p><strong>Hours: </strong>08:00hrs-18:00hrs, SUN-FRI</p>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+            <i class='bx bxl-facebook'></i>
+             <i class='bx bxl-twitter'></i>
+             <i class='bx bxl-instagram-alt' ></i>
+             <i class='bx bxl-linkedin' ></i>
+             <i class='bx bxl-pinterest' ></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Deivery Information</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+    </div>
+    <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign in</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+            <img src="app.jpg" alt="">
+            <img src="play.jpg" alt="">
+        </div>
+<p>Secured payment Gateways</p>
+<img src="pay.png" alt="">
+    </div>
+    <div class="copyright">
+        <p>©2023, SLSK designs E-commerce Bookshop</p>
+    </div>
+ </footer>
+
+</body>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+
+<script src="javascript.js"></script>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLSK Book shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Firebase JavaScript SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+
+    <button id="signInButton">Create Account / Sign In</button>
+    <button id="signOutButton">Sign Out</button>
+    <button id="twitterLoginButton">Login with Twitter</button>
+
+
+    <div id="message">
+        <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCeHbdVPvXbMxwZEiF6LY26Txo_Zr7fWYM",
+          authDomain: "myproject-377ca.firebaseapp.com",
+          projectId: "myproject-377ca",
+          storageBucket: "myproject-377ca.appspot.com",
+          messagingSenderId: "772160995722",
+          appId: "1:772160995722:web:deafcd082acfa0f9cbc873"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider()
+
+  const signInButton = document.getElementById("signInButton");
+  const signOutButton = document.getElementById("signOutButton");
+  const message = document.getElementById("message");
+  const userName = document.getElementById("userName");
+  const userEmail = document.getElementById("userEmail");
+
+  signOutButton.style.display = "none";
+  message.style.display = "none";
+
+  const userSignIn = async() => {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        const user = result.user
+        console.log(user);
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message
+    })
+  }
+
+  const userSignOut = async() => {
+    signOut(auth).then(() => {
+        alert("You have signed out successfully!");
+    }).catch((error) => {})
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    if(user) {
+      signOutButton.style.display = "block";
+      message.style.display = "block";
+      userName.innerHTML = user.displayName;
+      userEmail.innerHTML = user.email
+    } else {
+      signOutButton.style.display = "none";
+      message.style.display = "none";
+    }
+  })
+
+  signInButton.addEventListener('click', userSignIn);
+  signOutButton.addEventListener('click', userSignOut);
+      </script>
+
+
+     
+    <section id="header">
+
+        <div id="logo">
+        YOUR ONLINE BOOK SHOP
+        </div>
+
+    
+
+    <div>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="laugage-bag"><a href="search.html"><i class='bx bxs-search-alt-2' ></i></a></li>
+            <li id="laugage-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </div>
+    <div id="mobile">
+<i id="bar" class="fas fa-outdent"></i>
+
+    </div>
+   </section>
+
+<section id="hero">
+<h4>ARE YOU SEARCHING A BOOK</h4>
+<h2>BIGGEST LIBRARY</h2>
+<p>Expand your mind by reading a book</p>
+
+</section>
+<section id="feature">
+    <div class="fe-box">
+        <img src="f1.png" alt="">
+        <h6>Free Shippng</h6>
+    </div>
+
+    <div class="fe-box">
+        <img src="f2.png" alt="">
+        <h6>Online Order</h6>
+    </div>
+
+    <div class="fe-box">
+        <img src="f3.png" alt="">
+        <h6>Save Money</h6>
+    </div>
+
+    <div class="fe-box">
+        <img src="f4.png" alt="">
+        <h6>Promotions</h6>
+    </div>
+
+    <div class="fe-box">
+        <img src="f5.png" alt="">
+        <h6>Happy Sell</h6>
+    </div>
+    
+    <div class="fe-box">
+        <img src="f6.png" alt="">
+        <h6>F24/7 Support</h6>
+    </div>
+</section>
+<div id="cart">
+    <h2>Your Cart</h2>
+    <div id="cartItems">
+        <a href="#"><i class='bx bx-cart' ></i></a>
+        <!-- Cart items will be displayed here -->
+    </div>
+    <p id="cartTotal">Total: Ksh 0.00</p>
+</div>
+
+<section id="product1">
+<h2>Featured Items in Your Store</h2>
+<p>Expand your mind today</p>
+ <div class="pro-container"> 
+<div class="pro"> 
+    <img src="5 Emotionally Intelligent Habits For Handling Frustration At Work - TechTello.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Master your Emotions</span>
+        <h5>By Thibaut Meurisse</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: '5 Emotionally Intelligent Habits For Handling Frustration At Work - TechTello.jpg', title: 'Product Name', price: 200.00 })">Add to Cart</button>
+
+</div>           
+<div class="pro"> 
+    <img src="Everything Is F_cked _ A Book about Hope (Paperback) - Walmart_com.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Everything is fucked up</span>
+        <h5>By Mark Manson</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'Everything Is F_cked _ A Book about Hope (Paperback) - Walmart_com.jpg', title: 'Everything is fucked up', price: 200.00 })">Add to Cart</button>
+
+</div>           
+<div class="pro"> 
+    <img src="Book Feature - The Good Lie by A_R. Torre - Book Review - Hasty Book List" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Good Lie</span>
+        <h5>By A.R. Torre</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'Book Feature - The Good Lie by A_R. Torre - Book Review - Hasty Book List', title: 'The Good Lie', price: 200.00 })">Add to Cart</button>
+
+</div>         
+  <div class="pro"> 
+    <img src="How Did Reading and Writing Evolve_ Neuroscience Gives A Clue.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Brain Matters</span>
+        <h5>By Margie Meacham</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'How Did Reading and Writing Evolve_ Neuroscience Gives A Clue.jpg', title: 'Brain Matters', price: 200.00 })">Add to Cart</button>
+
+</div>           
+        
+  <div class="pro"> 
+    <img src="How To Learn Anything In 6 Steps - 4Tests_com.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Art of Learning</span>
+        <h5>By Josh Waitzkin</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'How To Learn Anything In 6 Steps - 4Tests_com.jpg', title: 'The Art of Learning', price: 200.00 })">Add to Cart</button>
+
+</div>           
+<div class="pro"> 
+    <img src="dabbe3a0-064a-4462-806a-73e38a54ec68.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Talent is never Enough</span>
+        <h5>By John C. maxwell</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'dabbe3a0-064a-4462-806a-73e38a54ec68.jpg',title:'Talent is never Enough', price: 200.00 })">Add to Cart</button>
+
+</div>           
+        
+  <div class="pro"> 
+    <img src="Speak Like a CEO_ Secrets for Commanding Attention and Getting Results (Mcgraw Hill Education Business Classics).jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Speak like a CEO</span>
+        <h5>By Suzanne Bates</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'Speak Like a CEO_ Secrets for Commanding Attention and Getting Results (Mcgraw Hill Education Business Classics).jpg', title: 'Product Name', price: 200.00 })">Add to Cart</button>
+
+</div>     
+<div class="pro"> 
+    <img src="The 7 Best Sports Psychology Books.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Think like a Worrior</span>
+        <h5>By Darrin Donnelly</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'The 7 Best Sports Psychology Books.jpg', title: 'Think like a Worrior', price: 200.00 })">Add to Cart</button>
+
+</div>   
+<div class="pro"> 
+    <img src="The Best Personal Finance Books that Must Be on Your Bookshelf!.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>Your Money or your Life</span>
+        <h5>By Vicki Robin</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'The Best Personal Finance Books that Must Be on Your Bookshelf!.jpg', title: 'Your Money or your Life', price: 200.00 })">Add to Cart</button>
+
+</div>
+<div class="pro"> 
+    <img src="30 Must-Read Books of 2023.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>A Little Life</span>
+        <h5>By Hanya Yanagihara</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: '30 Must-Read Books of 2023.jpg', title: 'A Little Life', price: 200.00 })">Add to Cart</button>
+
+</div> 
+<div class="pro"> 
+    <img src="The Gilded Ones.jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Gilded Ones</span>
+        <h5>By Namina Forna</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'The Gilded Ones.jpg', title: 'The Gilded Ones', price: 200.00 })">Add to Cart</button>
+
+</div>     
+<div class="pro"> 
+    <img src="The Queen Within_ Becoming the Woman God Intended (1).jpg" alt="" height="320" width="245"> 
+    <div class="des">
+        <span>The Queen Within</span>
+        <h5>By Laureen D. Pitts</h5>
+        <div class="ratting">
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+        <i class="ratting-stars"><i class='bx bxs-star'></i></i>
+    </div>
+    <h4>Ksh 200</h4>
+    </div>
+    <button onclick="addToCart({ id: 0, image: 'The Queen Within_ Becoming the Woman God Intended (1).jpg', title: 'The Queen Within', price: 200.00 })">Add to Cart</button>
+
+</div>                                  
+ </div>
+</div>
+
+ </section>
+
+ <section id="banner">
+    <h4>Other Stationery Items</h4>
+    <h2>Up to <span>70% off</span>- All Books & other Accessories</h2>
+    <button>Explore More</button>
+ </section>
+ <section id="newsletter">
+    <div class="newstext">
+        <h4>For more Information From us</h4>
+        <p>Get E-mail updates about our shop and <span>special offers.</span> </p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Your e-mail Address">
+        <button>Sign up</button>
+    </div>
+ </section>
+ <footer>
+    <div class="col">
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 4286 Thika SuperHighway, RUIRU</p>
+        <p><strong>Phone: </strong>+254 748409818</p>
+        <p><strong>Hours: </strong>08:00hrs-18:00hrs, SUN-FRI</p>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+            <i class='bx bxl-facebook'></i>
+             <i class='bx bxl-twitter'></i>
+             <i class='bx bxl-instagram-alt' ></i>
+             <i class='bx bxl-linkedin' ></i>
+             <i class='bx bxl-pinterest' ></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Deivery Information</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+    </div>
+    <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign in</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+            <img src="app.jpg" alt="">
+            <img src="play.jpg" alt="">
+        </div>
+<p>Secured payment Gateways</p>
+<img src="pay.png" alt="">
+    </div>
+    <div class="copyright">
+        <p>©2023, SLSK designs E-commerce Bookshop</p>
+    </div>
+ </footer>
+ 
+
+</body>
+<script src="cart.js"></script>
+<script src="script.js"></script>
+</html>
